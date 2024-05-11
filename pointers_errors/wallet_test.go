@@ -1,12 +1,14 @@
 package pointers_errors
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestWallet(t *testing.T) {
-	wallet := Waller{}
-	wallet.Deposit(10)
-	got := wallet.Balance
-	want := 10
+	wallet := Wallet{}
+	wallet.Deposit(Bitcoin(10))
+	got := wallet.Balance()
+	want := Bitcoin(10)
 
 	if got != want {
 		t.Errorf("got %d want %d", got, want)
